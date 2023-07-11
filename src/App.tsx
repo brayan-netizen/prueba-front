@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import User from './components/User';
+import Dashboard from './components/Dashboard';
+import { Navigate } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+	const client = new ApolloClient({
+		uri: 'http://localhost:4000/graphql',
+		cache: new InMemoryCache()
+	});
+
+	return (
+		<ApolloProvider client={client}>
+			<Router>
+				<Routes>
+					<Route path='/' element={<Navigate to='/login' />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/user' element={<User />} />
+					<Route path='/dashboard' element={<Dashboard />} />
+					{/* <Route element={NotFound} /> */}
+				</Routes>
+			</Router>
+		</ApolloProvider>
+	);
+};
 
 export default App;

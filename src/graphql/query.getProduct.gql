@@ -1,0 +1,12 @@
+query {
+	getProductsInfoAll {
+		brand
+		productId
+		productName
+		productTitle
+		brandImageUrl
+		imageUrl
+		link
+		nameComplete
+	}
+}
