@@ -1,0 +1,66 @@
+.content-icon-menu {
+	transition: 0.5s;
+	border-radius: 50px;
+}
+.content-icon-menu:hover {
+	background-color: #ffdb00;
+}
+
+.options-login {
+	width: 20rem;
+	top: 20px;
+	opacity: 0;
+	transition: 1s;
+	visibility: hidden;
+}
+
+.options-login.login-active {
+	opacity: 1;
+	visibility: visible;
+}
+
+.icon-menu {
+	width: 25px;
+	max-height: max-content;
+}
+
+.login-col-link a {
+	color: black;
+	margin: 10px 0;
+}
+
+.button-login button {
+	color: #ffdb00;
+	border-color: black;
+	background-color: black;
+}
+
+.icon-menu-col .icon-user {
+	padding: 2rem;
+	margin: auto;
+	border-radius: 50%;
+	width: 5rem;
+	height: 5rem;
+	font-size: 3rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.transition-text {
+	color: #ffdb00;
+	transition: all 0.3s ease;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.fade-in {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.fade-out {
+	opacity: 0;
+	transform: translateY(-10px);
+}
