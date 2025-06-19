@@ -194,15 +194,27 @@ const UserTable = ({ showToast }: { showToast: any }) => {
 			},
 			actions: {
 				title: 'Actions',
-				cellRenderer: ({ rowData }: any) => (
-					<Button
-						variation='danger'
-						size='small'
-						onClick={() => setUserToDelete(rowData)}
-					>
-						Eliminar
-					</Button>
-				)
+				cellRenderer: ({ rowData }: any) => {
+					console.log('prueba', rowData);
+
+					if (
+						rowData?.roles?.some(
+							(role: { name?: string }) =>
+								role?.name === 'Super Admin'
+						)
+					)
+						return <></>;
+
+					return (
+						<Button
+							variation='danger'
+							size='small'
+							onClick={() => setUserToDelete(rowData)}
+						>
+							Eliminar
+						</Button>
+					);
+				}
 			}
 		}
 	};
