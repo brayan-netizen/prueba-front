@@ -1,4 +1,4 @@
-import foto from '../assets/foto.JPG';
+import foto from '../assets/foto.jpg';
 
 const technologies = [
 	{
